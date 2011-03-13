@@ -1,0 +1,10 @@
+- if flash[:error]
+  #response
+    #flashMessage.error
+      %ul
+        %li= flash[:error]
+- if flash[:notice]
+  #response
+    #flashMessage.error
+      %ul
+        %li= flash[:notice]

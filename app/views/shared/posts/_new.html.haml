@@ -1,0 +1,9 @@
+- if current_user
+  #messagebox
+    = form_for(Post.new) do |f|
+      .messagebox
+        = f.text_area :body
+      .button-submit
+        %button.submit
+      = f.select :category_id, options_from_collection_for_select(Category.all, "id", "name")
+  #messagebox-disabled

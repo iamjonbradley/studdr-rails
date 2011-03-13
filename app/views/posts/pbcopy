@@ -1,0 +1,60 @@
+<% @posts.each do |post| %>
+    <% # link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+    <div id=posts>
+    <div class="post">
+  
+  <!-- user images -->
+  <div class="user">
+    <div class="user-image">
+      <%= image_tag(post.user.gravatar_url(:size=>85)) %>
+    </div>
+    <br />
+    <div class="show-vote vote-143">
+      <%= form_for(Vote.new) do |f|%>
+        <%= hidden_field_tag 'vote[post_id]', post.id %>
+        <%= f.submit '', :class => 'vote' %>
+      <% end %>
+                  </div>
+    </div>
+  
+  
+  <div class="content">
+    
+    <div class="counts">
+      <div class="comments">
+
+        <div class="number comments-143"><%= post.comments.count %></div> comments
+      </div>
+      <div class="votes">
+        <div class="number votes-143" class="votes-143"><%= post.votes.count%></div> votes
+      </div>
+    </div>
+    
+    <div class="article break-word">
+        <%= post.body %>
+    </div>
+    
+    <div class="details">
+      <div class="info">
+        Posted in <%= post.category.name %> 
+        by <%= post.user.first_name %> 
+        at <%= post.created_at.strftime('%m/%d/%Y %H:%m') %>
+      </div>
+
+      <div class="links">
+                <%= link_to 'Comment', post %> - 
+                                <a href="http://twitter.com/home?status=The+abbreviation+for+%26ldquo%3Bscience+fiction%26rdquo%3B+doesn%26rsquo%3Bt+have+a+%22y%22+in+it%2C+and+it+definitely+doesn%26rsquo%3Bt+ha...+http%3A%2F%2Fstdr.in%2Feb8" target="new">Tweet</a> | <a href="http://facebook.com/share.php?u=http://studdr.com/p/143/the-abbreviation-for-ldquo-science-fiction-rdquo-doesn-rsquo-t-have-a-quot-y-quot-in-it-and-it-defin" target="new">Facebook</a>                       </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<% end %>
+
+<br />
+
+</div>
+
+

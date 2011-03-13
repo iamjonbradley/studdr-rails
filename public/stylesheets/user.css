@@ -1,0 +1,14 @@
+#messagebox-disabled {
+  z-index: 50;
+  position: absolute;
+  display: block;
+  top: -6px;
+  background: url('/images/bg-message-box-disabled.png') no-repeat;
+  width: 626px;
+  height: 141px;
+  padding: 10px;
+}
+
+#fb-root {
+	display: block;
+}

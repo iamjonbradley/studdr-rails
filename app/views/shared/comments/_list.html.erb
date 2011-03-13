@@ -1,0 +1,16 @@
+				<div class="comment">
+					<div class="text">
+						<?php echo $data['Comment']['content']; ?>
+						<div class="meta">Posted <?php echo $this->Time->timeAgoInWords ($data['Comment']['created']); ?></div>
+					</div>
+					<div class="image">
+					  <?php 
+        	  echo $this->Html->link(
+          	  $this->Html->image('http://graph.facebook.com/'. $data['User']['id'] .'/picture?type=square'),
+        	    $data['User']['facebook_link'], 
+        	    array('escape' => false, 'target' => 'new')
+        	  )
+        	  ?>
+					</div>
+				</div>
+				<div class="comment-divider"> </div>

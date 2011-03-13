@@ -1,0 +1,24 @@
+<div id="most-active">
+	<h2>Top Posters</h2>
+	<?php foreach ($top_user as $key => $value) { ?>
+				<div class="poster">
+					<div class="text">
+						<span class="name"><?php echo $value['User']['firstname']; ?> <?php echo substr($value['User']['lastname'], 0, 1); ?></span> <br />
+						Posts: <?php echo $value['User']['post_count']; ?> | 
+						Votes: <?php echo $value['User']['vote_count']; ?><br />
+						Comments: <?php echo $value['User']['comment_count']; ?> 
+					</div>
+					<div class="image">
+					  <?php 
+        	  echo $this->Html->link(
+          	  $this->Html->image('http://graph.facebook.com/'. $value['User']['id'] .'/picture?type=square'),
+        	    $value['User']['facebook_link'], 
+        	    array('escape' => false, 'target' => 'new')
+        	  )
+        	  ?>
+					</div>
+				</div>
+	<?php } ?>
+</div>
+
+<div class="divider"> </div>

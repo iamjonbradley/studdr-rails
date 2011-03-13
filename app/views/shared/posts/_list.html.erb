@@ -1,0 +1,97 @@
+<div class="post">
+  
+  <!-- user images -->
+  <div class="user">
+  	<div class="user-image">
+  	  <?php 
+  	  echo $this->Html->link(
+    	  $this->Html->image('http://graph.facebook.com/'. $data['User']['id'] .'/picture?type=large'),
+  	    $data['User']['facebook_link'], 
+  	    array('escape' => false, 'target' => 'new')
+  	  )
+  	  ?>
+    </div>
+    <br />
+    <div class="show-vote vote-<?php echo $data['Post']['id']; ?>">
+      <?php if (($user = $this->Session->read('Auth.User')) == true) { ?>
+        <?php if ($data['voted'] == false) { ?>
+        <input type="submit" value="" class="vote" id="<?php echo $data['Post']['id']; ?>" />
+        <?php } else { ?>
+          <div class="btn-voted">&nbsp;</div>
+        <?php } ?>
+      <?php } else { ?>
+          <div class="btn-vote">&nbsp;</div>
+      <?php } ?>
+    </div>
+  </div>
+  
+  
+  <!-- user content -->
+  <div class="content">
+    
+    <!-- counts -->
+    <div class="counts">
+      <div class="comments">
+        <div class="number comments-<?php echo $data['Post']['id']; ?>"><?php echo $data['Post']['comment_count']; ?></div> comments
+      </div>
+      <div class="votes">
+        <div class="number votes-<?php echo $data['Post']['id']; ?>" class="votes-<?php echo $data['Post']['id']; ?>"><?php echo $data['Post']['vote_count']; ?></div> votes
+      </div>
+    </div>
+    
+    <!-- articles -->
+    <div class="article">
+      <?php       
+      
+      $post = $data['Post']['content'];
+	    $post = html_entity_decode ($post);
+			$post = htmlspecialchars_decode($post, ENT_NOQUOTES);
+			$post = html_entity_decode($post);
+			$post = urldecode($post);
+			$post = str_replace('\n', '<br />', $post);
+      $post = nl2br($post);
+	    echo $post;
+	    
+      
+	    
+      echo $this->element('posts/media', array('data' => $data['Media']));
+      ?>
+    </div>
+    
+    <!-- details -->
+    <div class="details">
+      <div class="info">
+        Posted <?php echo $this->Time->timeAgoInWords ($data['Post']['created']); ?> 
+        by <?php echo $data['User']['firstname']; ?>   | 
+        <?php echo $data['Post']['ttl_views']; ?> Views
+      </div>
+      <div class="links">
+      <?php if ($this->params['action'] != 'view') { ?>
+      	<a href="/p/<?php echo $data['Post']['id']; ?>/<?php echo $data['Post']['slug']; ?>">Comment</a> - 
+			<?php } ?>
+      	<?php echo $this->Social->render($post, $data); ?>
+			</div>
+    </div>
+    <?php if ($this->params['action'] == 'view') { ?>		
+    <!-- comments block -->
+		<div id="comments">
+			<div class="top"> </div>
+			<div class="middle">
+				
+				<!-- comments -->
+				<?php 
+				foreach ($comments as $key => $value) {
+					echo $this->element('comments/list', array('data' => $value));
+				} 
+				?>
+				
+				<!-- add comment -->
+				<?php echo $this->element('comments/add'); ?>
+			</div>
+			
+			<div class="bottom"> </div>
+		</div>
+		<?php } ?>
+
+  </div>
+</div>

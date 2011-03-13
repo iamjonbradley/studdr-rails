@@ -1,0 +1,21 @@
+
+<div id="tweets">
+	<h2>Social</h2>
+	<?php 
+	$tweets = $this->Tweets->render();
+	
+	for ($i=0; $i < 4; $i++) {
+		echo '<div class="tweet">';
+			echo $tweets[$i]['text'] .'<br />';
+			echo '<span class="from">';
+				echo '@'. $tweets[$i]['user']['screen_name'] .' - '. $this->Time->timeAgoInWords ($tweets[$i]['created_at']);
+			echo '</span>';
+		echo '</div>';
+		echo '<div class="divider-tweets"></div>';
+	}
+	?>
+</div>
+
+<span id="follow-placeholder"></span>
+
+<div class="divider"> </div>

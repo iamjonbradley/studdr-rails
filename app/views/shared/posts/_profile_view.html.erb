@@ -1,0 +1,24 @@
+<div class="profile-post">
+	<?php 
+	$post = $data['content'];
+	if ($this->request->action != 'view') {
+	  $post = html_entity_decode ($post);
+	  $post = $this->Text->truncate($post, 300, array('ending' => '...', 'exact' => false)); 
+	}
+	else {
+		$post = nl2br($post);
+	}
+	$post = htmlspecialchars_decode($post, ENT_NOQUOTES);
+	$post = html_entity_decode($post);
+	$post = urldecode($post);
+	$post = str_replace('\n', '<br />', $post);
+	echo $post;
+	?>
+	<br />
+	<span class="info">
+	  Posted on <?php echo $this->Time->timeAgoInWords ($data['created']); ?> | 
+	  <?php echo $data['ttl_views']; ?> Views | 
+		<a href="/p/<?php echo $data['id']; ?>/<?php echo $data['slug']; ?>">View Comments</a>
+	</span>
+</div>
+<div class="comment-divider"> </div>

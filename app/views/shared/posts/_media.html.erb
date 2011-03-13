@@ -1,0 +1,11 @@
+<?php
+
+if (!empty($data['fullimage'])) {
+	
+	$fullimage = 'http://'. $data['bucket'] .'.'. $data['address'] .'/'. $data['fullimage'];
+	$original = 'http://'. $data['bucket'] .'.'. $data['address'] .'/'. $data['original'];
+	
+	$img = $this->Html->image($fullimage, array('class' => 'media', 'rel' => 'facebox'));
+	
+	echo $this->Html->link($img, $original, array('rel' => 'facebox', 'escape' => false));
+}

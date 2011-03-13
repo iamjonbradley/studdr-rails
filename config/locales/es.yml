@@ -1,0 +1,6 @@
+# Convert to ES
+es:
+  hello:  "Hola!"
+  slogon: "Studdr es aseado en carriles."
+  about_us_content: "esto está sobre nosotros en español"
+  listing_posts:  "Postes del listado"

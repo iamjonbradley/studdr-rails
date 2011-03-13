@@ -1,0 +1,13 @@
+<% if current_user %>
+  <% if current_user.first_name == 'jonathan@studdr.com' %>
+    Silly Baker... Cakes are for Railers!!!!<br /><br />
+  <% end %>
+  <% if current_user.email == 'lunarhole@gmail.com' %>
+    Only you know the way...<br />Which way I donno>>> <br />
+  <% end %>
+  Hi Hoochie... <%= current_user.first_name %><br />  
+  <%= link_to "Log out", log_out_path %>  
+<% else %>  
+  <%= link_to "Sign up", sign_up_path %> or   
+  <%= link_to "Log in", log_in_path %>  
+<% end %> 

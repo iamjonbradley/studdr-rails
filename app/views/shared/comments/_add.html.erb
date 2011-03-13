@@ -1,0 +1,14 @@
+<?php if (!empty($auth)) { ?>
+	<form action="/comments/add" method="post" id="add-comment">
+		<input type="hidden" name="data[Comment][post_id]" value="<?php echo $data['Post']['id']; ?>" />
+    <input type="hidden" name="data[Comment][user_id]" value="<?php echo $this->Session->read('Auth.User.id'); ?>" />
+		<div class="post-comments">
+			<div class="txtcomment">
+				<textarea name="data[Comment][content]" maxlength="140"></textarea>
+			</div>
+    	<img src="http://graph.facebook.com/<?php echo $this->Session->read('Auth.User.id'); ?>/picture?type=square" />
+			<div class="notice">Characters remaining:  <span class="remaining"></remaining></div>
+			<button class="comment"></button>
+		</div>
+	</form>
+<?php } ?>€ý5:wqls€kb€kb`€kb€kb€kb:q!

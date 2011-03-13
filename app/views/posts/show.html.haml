@@ -1,0 +1,61 @@
+#posts
+  .post
+    .user
+      .user-image
+        = image_tag(@post.user.gravatar_url(:size=>85))
+      %br/
+      .show-vote.vote-143
+        = form_for(Vote.new) do |f|
+          = hidden_field_tag 'vote[post_id]', @post.id
+          = f.submit '', :class => 'vote'
+    .content
+      .counts
+        .comments
+          .number.comments-143= @post.comments.count
+          comments
+        .votes
+          .number.vote-143= @post.votes.count
+          votes
+      .article.break-word
+        = @post.body
+      .details
+        .info
+          Posted in #{@post.category.name}
+          by #{@post.user.first_name}
+          at #{@post.created_at.strftime('%m/%d/%Y %H:%m')}
+        .links
+          %a{:href => "http://twitter.com/home?status=The+abbreviation+for+%26ldquo%3Bscience+fiction%26rdquo%3B+doesn%26rsquo%3Bt+have+a+%22y%22+in+it%2C+and+it+definitely+doesn%26rsquo%3Bt+ha...+http%3A%2F%2Fstdr.in%2Feb8", :target => "new"} Tweet
+          |
+          %a{:href => "http://facebook.com/share.php?u=http://studdr.com/p/143/the-abbreviation-for-ldquo-science-fiction-rdquo-doesn-rsquo-t-have-a-quot-y-quot-in-it-and-it-defin", :target => "new"} Facebook
+      #comments
+        .top         
+        .middle
+          - @post.comments.reverse.each do |comment|
+            .comment
+              .text
+                = comment.message
+                .meta
+                  Posted by #{comment.user.first_name}
+              .image
+                %a{:href => "http://www.facebook.com/irate", :target => "new"}
+                  %img{:alt => "", :src => "http://graph.facebook.com/628949000/picture?type=square"}/
+            .comment-divider           
+          = form_for(Comment.new) do |f|
+            = hidden_field_tag 'comment[post_id]', @post.id
+            .post-comments
+              .txtcomment
+                = f.text_area :message
+              %img{:src => "http://graph.facebook.com/628949000/picture?type=square"}/
+              .notice
+                Characters remaining:
+                %span.remaining
+              %button.comment{:type => "submit"}
+        .bottom
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
+=======
+
+>>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400

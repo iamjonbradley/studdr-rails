@@ -1,0 +1,13 @@
+
+<div class="pagination">
+	<?php
+	if (isset($keywords))
+  	$this->Paginator->options(array('url' => 'keywords:'. $keywords));
+  
+  echo $this->Paginator->prev('« Previous ', null, null, array('class' => 'disabled'));
+  echo '&nbsp;';
+  echo $this->Paginator->numbers(); 
+  echo '&nbsp;';
+  echo $this->Paginator->next(' Next »', null, null, array('class' => 'disabled'));
+	?>
+</div>

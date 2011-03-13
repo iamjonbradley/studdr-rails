@@ -1,0 +1,43 @@
+<% if current_user %>
+<div id="messagebox">
+<%= form_for(Post.new) do |f| %>
+
+	    
+	    <div class="messagebox">
+                <%= f.text_area :body %>
+	    </div>
+	    
+		<!---	
+			<div id="divinputfile">
+				<input name="data[Media][file]" type="file" id="media" onchange="document.getElementById('mediafile').value = this.value;"/>
+				<div id="filefield"><input name="fakefilepc" type="text" id="mediafile" /></div>
+			</div>
+	    -->
+	    <div class="button-submit">
+	      <button class="submit"></button>
+	    </div>
+	    
+    <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "name") %>
+              <!---
+	    <div class="categories">
+	      <ul>
+	        <li class="category" id="Love">Love</li>
+	        <li class="category" id="Sex">Sex</li>
+	        <li class="category" id="Money">Money</li>
+	        <li class="category" id="Work">Work</li>
+	        <li class="category" id="Misc">Misc</li>
+	      </ul>
+ </div>
+-->	   
+	    
+	    <!--
+	    <div class="select-file">
+	      <input type="file" id="file" name="data[Media][file]" />
+	    </div>
+	    -->
+<% end %>
+	</div>
+	
+	<div id="messagebox-disabled">
+	</div>
+<% end %>
