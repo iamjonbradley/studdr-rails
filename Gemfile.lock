@@ -31,14 +31,8 @@ GEM
     arel (2.0.7)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-<<<<<<< HEAD
-<<<<<<< HEAD
     carrierwave (0.5.2)
       activesupport (~> 3.0)
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     configuration (1.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -50,14 +44,8 @@ GEM
       rest-client (>= 1.4.0, < 1.7.0)
     i18n (0.5.0)
     json (1.5.1)
-<<<<<<< HEAD
-<<<<<<< HEAD
     kaminari (0.10.4)
       rails (>= 3.0.0)
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -67,13 +55,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-<<<<<<< HEAD
-<<<<<<< HEAD
     mysql2 (0.2.6)
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -96,15 +78,7 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
-<<<<<<< HEAD
-<<<<<<< HEAD
     rmagick (2.13.1)
-=======
-    sqlite3-ruby (1.2.4)
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-    sqlite3-ruby (1.2.4)
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -115,8 +89,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
-<<<<<<< HEAD
-<<<<<<< HEAD
   carrierwave
   gravtastic
   haml
@@ -125,15 +97,3 @@ DEPENDENCIES
   mysql2
   rails (= 3.0.3)
   rmagick
-=======
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-  gravtastic
-  haml
-  heroku
-  rails (= 3.0.3)
-  sqlite3-ruby
-<<<<<<< HEAD
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400

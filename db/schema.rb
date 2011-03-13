@@ -10,15 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110305151845) do
-=======
-ActiveRecord::Schema.define(:version => 20110228011001) do
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-ActiveRecord::Schema.define(:version => 20110228011001) do
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -34,18 +26,12 @@ ActiveRecord::Schema.define(:version => 20110228011001) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "images", :force => true do |t|
     t.string   "image_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
   create_table "posts", :force => true do |t|
     t.text     "body"
     t.datetime "created_at"

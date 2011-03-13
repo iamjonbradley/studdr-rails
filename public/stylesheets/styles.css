@@ -4,8 +4,6 @@
 
 body {
   background-color: #961d08;
-<<<<<<< HEAD
-<<<<<<< HEAD
   background: url('/images/bg-gradient.png');
   margin: 0;
   padding: 0;
@@ -16,14 +14,6 @@ body {
   background-repeat:no-repeat;
   background-attachment:fixed;
 }
-=======
-}
-
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-}
-
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
 a {
 	color: #000;
 	font-weight: bold;
@@ -31,15 +21,7 @@ a {
 
 #container {
   display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin-left:100px;
-=======
-  margin: 0 auto;
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-  margin: 0 auto;
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
   width: 910px;
 }
 

@@ -4,23 +4,11 @@ class PostsController < ApplicationController
   def index
     if params[:category]
       category = Category.find(:first, :conditions => ["name LIKE ?", params[:category]])
-<<<<<<< HEAD
-<<<<<<< HEAD
       # @posts = Post.find(:all,:order => "id DESC", :conditions => ["category_id = ?",category.id]).page(params[:page])
       @posts = Post.order("id DESC").where(:category_id => category.id).page()
     else
         @posts = Post.order('id DESC').page(params[:page])
 
-=======
-      @posts = Post.find(:all,:order => "id DESC", :conditions => ["category_id = ?",category.id])
-    else
-      @posts = Post.find(:all,:order => "id DESC")
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-      @posts = Post.find(:all,:order => "id DESC", :conditions => ["category_id = ?",category.id])
-    else
-      @posts = Post.find(:all,:order => "id DESC")
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -32,14 +20,6 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
-
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }

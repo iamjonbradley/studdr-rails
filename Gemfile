@@ -5,8 +5,6 @@ gem 'haml'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 gem 'mysql2'
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'bcrypt-ruby', :require => 'bcrypt'  
@@ -15,17 +13,6 @@ gem 'gravtastic'
 gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
-=======
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'bcrypt-ruby', :require => 'bcrypt'  
-gem 'heroku'
-gem 'gravtastic'
-<<<<<<< HEAD
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
-=======
->>>>>>> b834317a6c2c4cf0766ab93fdaa96472f7580400
 
 # Use unicorn as the web server
 # gem 'unicorn'
