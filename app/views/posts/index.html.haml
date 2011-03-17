@@ -5,7 +5,7 @@
       / user images
       .user
         .user-image
-          = image_tag(post.user.gravatar_url(:size=>85))
+          = image_tag(post.user.gravatar_url(:size=>75))
         %br/
         .show-vote.vote-143
           = form_for(Vote.new) do |f|

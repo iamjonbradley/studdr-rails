@@ -2,7 +2,7 @@
   .post
     .user
       .user-image
-        = image_tag(@post.user.gravatar_url(:size=>85))
+        = image_tag(@post.user.gravatar_url(:size=>75))
       %br/
       .show-vote.vote-143
         = form_for(Vote.new) do |f|
@@ -37,15 +37,14 @@
                 .meta
                   Posted by #{comment.user.first_name}
               .image
-                %a{:href => "http://www.facebook.com/irate", :target => "new"}
-                  %img{:alt => "", :src => "http://graph.facebook.com/628949000/picture?type=square"}/
+                = image_tag(@post.user.gravatar_url(:size=>52))
             .comment-divider           
           = form_for(Comment.new) do |f|
             = hidden_field_tag 'comment[post_id]', @post.id
             .post-comments
               .txtcomment
                 = f.text_area :message
-              %img{:src => "http://graph.facebook.com/628949000/picture?type=square"}/
+              %img{:src => "http://graph.facebook.com/628949000/picture?type=square"}
               .notice
                 Characters remaining:
                 %span.remaining

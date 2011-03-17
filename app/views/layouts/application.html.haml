@@ -14,20 +14,21 @@
     %link{:href => "https://microformats.org/profile/hcard", :rel => "profile"}
       %script{:charset => "utf-8", :src => "http://connect.facebook.net/en_US/all.js", :type => "text/javascript"}
   %body
-    #wrapper
-      #container
-        #logo
-          = link_to image_tag('logo.png', :alt => 'Studdr'), '/'
-        #header
-          = render 'shared/header'
-        #section
-          = render 'shared/sidebar'
-          = render 'shared/posts/new'
-          = render 'shared/notices'
-          = yield
-        #footer
-          = render 'shared/footer'
-          = render 'shared/misc/get_satifisfaction'
-          = render 'shared/misc/google_analytics'
-      = javascript_include_tag 'http://platform.twitter.com/anywhere.js?id=TJAQ1utgb7XUcOrb8VOFyA&v=1'
-      = javascript_include_tag 'jquery', 'jquery.form', 'jquery.facebox'
+    #bgwrapper
+      #wrapper
+        #container
+          #logo
+            = link_to image_tag('logo.png', :alt => 'Studdr'), '/'
+          #header
+            = render 'shared/header'
+          #section
+            = render 'shared/sidebar'
+            = render 'shared/posts/new'
+            = render 'shared/notices'
+            = yield
+          #footer
+            = render 'shared/footer'
+            = render 'shared/misc/get_satifisfaction'
+            = render 'shared/misc/google_analytics'
+        = javascript_include_tag 'http://platform.twitter.com/anywhere.js?id=TJAQ1utgb7XUcOrb8VOFyA&v=1'
+        = javascript_include_tag 'jquery', 'jquery.form', 'jquery.facebox'
