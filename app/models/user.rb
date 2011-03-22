@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :votes
   has_many :comments
+  has_many :authentications
   attr_accessible :email, :password, :password_confirmation
   include Gravtastic
   gravtastic
@@ -27,6 +28,23 @@ class User < ActiveRecord::Base
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-    end
   end
+  
+  def apply_omniauth(omniauth)
+      self.email = omniauth['user_info']['email'] if email.blank?
+      authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end
+
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
+  end
+
+  def provider_name
+    if provider == 'open_id'
+          "OpenID"
+            else
+                  provider.titleize
+end
+end
+end
 end

@@ -1,10 +1,13 @@
 Studdr::Application.routes.draw do
+  resources :authentications
   get "sessions/new"
   resources :votes
   resources :comments
   resources :posts
   match '/posts/category/:category' => 'posts#index'
- 
+  
+  # authentications
+  match '/auth/:provider/callback' => 'authentications#create'
   # Signup routes
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
