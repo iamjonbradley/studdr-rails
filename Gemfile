@@ -13,7 +13,9 @@ gem 'gravtastic'
 gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
-
+gem 'omniauth'
+gem 'nifty-generators'
+gem 'devise'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -36,3 +38,4 @@ gem 'kaminari'
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test
