@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments
   has_many :authentications
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
   include Gravtastic
   gravtastic
 

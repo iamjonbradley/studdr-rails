@@ -691,8 +691,8 @@ top: 0;
 
 
 .user-image img {
-        max-width: 70px;
-        width: expression(this.width > 70 ? 70: true);
+        max-width: 100px;
+        width: expression(this.width > 100 ? 100: true);
         border-radius: 10px;
         //# For firefox mostly older versions
         -moz-border-radius: 10px;
